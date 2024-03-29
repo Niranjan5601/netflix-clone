@@ -3,11 +3,22 @@
 
 import { Provider } from "react-redux"
 import {appStore} from "@/utils/appStore"
+import React from "react";
 
-export function Providers({children}){
+interface ProviderProp {
+    children: any;
+    
+    
+}
+
+
+const Providers:React.FC<ProviderProp> = ({children}) => {
     return (
         <Provider store={appStore}>
             {children}
         </Provider>
     )
 }
+
+
+export default Providers;

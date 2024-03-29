@@ -5,7 +5,7 @@ import { IoLogoYoutube } from 'react-icons/io';
 
 const Footer: React.FC = () => {
     return (
-        <footer className="bg-[#141414] text-gray-400  py-4 m-100">
+        <footer className="bg-[#141414] text-gray-400   py-4 ">
             <div className="container mx-auto  items-center">
                 <div className=' text-xs'>
                     <div className="flex space-x-4 m-10">
@@ -24,75 +24,87 @@ const Footer: React.FC = () => {
                             <IoLogoYoutube size={23} />
                         </a>
                     </div>
-                    <div className='grid grid-cols-4 gap-2 '>
-                        <div>
+                    <div className='hidden md:grid grid-cols-4 gap-1 text-start mx-20'>
+                        <div className=''>
                             <ul>
-                                <li>
-                                    Audio Description
+                                <li className='m-1'>
+                                    <a className='hover:underline' href='#'><span>Audio Description</span></a>
                                 </li>
-                                <li>
-                                    Investor Relations
+                                <li className='m-1'>
+                                    <a className='hover:underline' href='#'><span>Investor Relations</span></a>
+
                                 </li>
-                                <li>
-                                    Legal Notices
+                                <li className='m-1'> 
+
+                                    <a className='hover:underline' href='#'><span>Legal Notices</span></a>
                                 </li>
 
                             </ul>
                         </div>
                         <div>
                             <ul>
-                                <li>
-                                   Help Center
+                                <li className='m-1'>
+                                    <a className='hover:underline' href='#'><span>Help Center</span></a>
+
                                 </li>
-                                <li>
-                                    Job
+                                <li className='m-1'>
+                                    <a className='hover:underline' href='#'><span>Job</span></a>
+
                                 </li>
-                                <li>
-                                   Cookie Preferences
+                                <li className='m-1'>
+                                    <a className='hover:underline' href='#'><span>Cookie Preferences</span></a>
+
                                 </li>
 
                             </ul>
                         </div>
                         <div>
                             <ul>
-                                <li>
-                                    Gift Cards
+                                <li className='m-1'>
+                                    <a className='hover:underline' href='#'><span>Gift Cards</span></a>
+
                                 </li>
-                                <li>
-                                    Terms Of Use
+                                <li className='m-1'>
+                                    <a className='hover:underline' href='#'><span>Terms Of Use</span></a>
+
                                 </li>
-                                <li>
-                                    Corportate Information
+                                <li className='m-1'>
+                                    <a className='hover:underline' href='#'><span>Corportate Information</span></a>
+
                                 </li>
 
                             </ul>
                         </div>
                         <div>
                             <ul>
-                                <li>
-                                    Media Center
+                                <li className='m-1'>
+                                <a className='hover:underline' href='#'><span>Media Center</span></a>
+                                    
                                 </li>
-                                <li>
-                                    Privacy
+                                <li className='m-1'>
+                                <a className='hover:underline' href='#'><span>Privacy</span></a>
+                                    
                                 </li>
-                                <li>
-                                    Contact Us
+                                <li className='m-1'>
+                                <a className='hover:underline' href='#'><span>Contact Us</span></a>
+                                   
                                 </li>
 
                             </ul>
                         </div>
                     </div>
-                    
-                    <div className="text-gray-400 border mt-10">
+
+                    <div className="text-gray-400 mx-20 mt-10">
                         {/* Phone number */}
-                        <div className='p-2'>Serivce Code</div>
+                        <button className='p-2 border '>Serivce Code</button>
                     </div>
-                    <div className="mt-3">
+                    <div className="mt-3 mx-20">
                         {/* Copyright */}
                         © 1997–2024 Netflix, Inc.
                     </div>
+
                 </div>
-             
+
             </div>
         </footer>
     );
