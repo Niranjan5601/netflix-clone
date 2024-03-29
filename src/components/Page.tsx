@@ -10,6 +10,7 @@ import useHorrorMovies from "@/hooks/useHorrorMovies";
 import { useSelector } from "react-redux";
 import { RootState } from "@/utils/appStore";
 import MovieCardOnHoverDetail from "./MovieCardOnClickDetail";
+import Footer from "./Footer";
 
 
 
@@ -27,6 +28,7 @@ const Page = () => {
         <MainContainer/>
         <SecondaryContainer/>
         {showModal && <MovieCardOnHoverDetail />}
+        <Footer/>
         </div>
     );
 } 

@@ -1,6 +1,6 @@
 'use client';
 
-import {  AiOutlinePlus } from "react-icons/ai";
+import { AiOutlinePlus } from "react-icons/ai";
 import { FaPlay } from "react-icons/fa";
 import MuiModal from '@mui/material/Modal'
 import { RxCross1 } from "react-icons/rx";
@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/utils/appStore";
 
-import {toggleModal,setMovieId} from "@/utils/configSlice"
+import { toggleModal, setMovieId } from "@/utils/configSlice"
 import { API_OPTIONS } from "@/utils/constants";
 
 
@@ -21,33 +21,49 @@ import { API_OPTIONS } from "@/utils/constants";
 const MovieCardOnClickDetail = () => {
 
     const [muted, setMuted] = useState(true)
-    
-    const showModal =  useSelector((store:RootState) => store.config.showModal);
-    const movieId = useSelector((store:RootState) => store.config.movieId);
+
+    const showModal = useSelector((store: RootState) => store.config.showModal);
+    const movieId = useSelector((store: RootState) => store.config.movieId);
     const dispatch = useDispatch()
-    
-    const [movieData,setMovieData] = useState(null);
+
+    const [movieData, setMovieData] = useState<any>(null);
+    const [trailerData, setTrailerData] = useState<any>(null);
 
     const handleCloseModal = () => {
         dispatch(toggleModal());
         dispatch(setMovieId(null));
     }
 
-    const getMovieDetail = async() => {
+
+    const getMovieDetail = async () => {
         const data = await fetch(
             `https://api.themoviedb.org/3/movie/${movieId}`,
             API_OPTIONS
-          );
-          const json = await data.json();
-            
-            setMovieData(json);
-           
-         
+        );
+        const json = await data.json();
+
+        setMovieData(json);
+
+
+    }
+
+    const getTrailerData = async () => {
+        const data = await fetch(
+            `https://api.themoviedb.org/3/movie/${movieId}/videos`,
+            API_OPTIONS
+        );
+        const json = await data.json();
+
+        const filterData = json.results.filter((video: { type: string }) => video.type === "Trailer");
+        const trailer = filterData.length ? filterData[0] : json.results[0];
+        setTrailerData(trailer);
+
     }
 
     useEffect(() => {
-        !movieData && getMovieDetail(); 
-    },[]);
+        !movieData && getMovieDetail();
+        !trailerData && getTrailerData();
+    }, []);
 
 
 
@@ -58,7 +74,7 @@ const MovieCardOnClickDetail = () => {
             className="fixex !top-7 left-0 right-0 z-50 mx-auto w-full max-w-5xl overflow-hidden overflow-y-scroll rounded-md scrollbar-hide"
         >
             <>
-                
+
                 <button
                     onClick={handleCloseModal}
                     className="modalButton absolute right-5 top-5 !z-40 h-9 w-9 border-none bg-[#181818] hover:bg-[#181818]"
@@ -66,9 +82,9 @@ const MovieCardOnClickDetail = () => {
                     <RxCross1 className="h-6 w-6" />
                 </button>
 
-                <div className="relative pt-[56.25%]">
+               { trailerData? <><div className="relative pt-[56.25%]">
                     <ReactPlayer
-                        url={`https://www.youtube.com/watch?v=gSSsZReIFRk`}
+                        url={`https://www.youtube.com/watch?v=${trailerData?.key}`}
                         width="100%"
                         height="100%"
                         style={{ position: 'absolute', top: '0', left: '0' }}
@@ -100,13 +116,13 @@ const MovieCardOnClickDetail = () => {
                             )}
                         </button>
                     </div>
-                </div>
+                </div></>:<h1 className="bg-[#181818] text-center pt-3">No data to Display</h1>}
 
                 <div className="flex space-x-16 rounded-b-md bg-[#181818] px-10 py-8">
                     <div className="space-y-6 text-lg">
                         <div className="flex items-center space-x-2 text-sm">
                             <p className="font-semibold text-green-400">
-                                {95}% Match
+                            {Math.round(movieData?.vote_average * 10)}% Match
                             </p>
                             <p className="font-light">
                                 {movieData?.release_date}
@@ -121,7 +137,7 @@ const MovieCardOnClickDetail = () => {
                             <div className="flex flex-col space-y-3 text-sm">
                                 <div>
                                     <span className="text-[gray]">Genres: </span>
-                                    {movieData?.genres.map((genre:any) => genre.name).join(', ')}
+                                    {movieData?.genres.map((genre: any) => genre.name).join(', ')}
                                 </div>
 
                                 <div>
