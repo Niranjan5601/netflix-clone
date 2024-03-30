@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import HeaderMenu from "./HeaderMenu";
 import { BiBell, BiSearch } from 'react-icons/bi'
 import Link from 'next/link'
+import Image from "next/image";
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false)
 
@@ -27,11 +28,12 @@ const Header = () => {
     return (
         <header className={`${isScrolled && 'bg-[#141414]'} flex justify-between`}>
             <div className="flex items-center space-x-2 md:space-x-10">
-                <img
+                <Image
                     src="https://rb.gy/ulxxee"
                     width={100}
                     height={100}
                     className="cursor-pointer object-contain"
+                    alt="netflix-img"
                 />
                 <HeaderMenu />
                 <ul className="hidden space-x-4 md:flex">
@@ -48,7 +50,7 @@ const Header = () => {
                 <BiSearch className="hidden h-6 w-6 sm:inline" />
                 <BiBell className="h-6 w-6" />
                 <Link href="/account">
-                    <img
+                    <Image
                         src="https://rb.gy/g1pwyx"
                         alt="image"
                         className="cursor-pointer rounded"

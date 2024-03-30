@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link"
 
 
@@ -7,7 +8,7 @@ const Page =  () => {
         <div>
           <header className={`bg-[#141414]`}>
             <Link href="/">
-              <img
+              <Image
                 src="https://rb.gy/ulxxee"
                 width={120}
                 height={120}
@@ -16,7 +17,7 @@ const Page =  () => {
               />
             </Link>
             <Link href="/account">
-              <img
+              <Image
                 src="https://rb.gy/g1pwyx"
                 alt="new-image"
                 className="cursor-pointer rounded"
@@ -28,7 +29,7 @@ const Page =  () => {
             <div className="flex flex-col gap-x-4 md:flex-row md:items-center">
               <h1 className="text-3xl md:text-4xl">Account</h1>
               <div className="-ml-0.5 flex items-center gap-x-1.5">
-                <img src="https://rb.gy/4vfk4r" alt="" className="h-7 w-7" />
+                <Image src="https://rb.gy/4vfk4r" alt="" className="h-7 w-7" />
                 <p className="text-xs font-semibold text-[#555]">
                   {`Membership will expire on ${(new Date("2021-03-25")).toDateString()}`}
                 </p>

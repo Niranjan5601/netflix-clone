@@ -13,14 +13,15 @@ interface MovieCardProps {
 }
 
 const MovieCard: React.FC<MovieCardProps> = ({ posterPath, movieId }) => {
-    if (!posterPath) return null;
-   
     const dispatch = useDispatch()
 
     const handleToggleModal = () => {
         dispatch(toggleModal())
         dispatch(setMovieId(movieId))
     }
+    if (!posterPath) return null;
+   
+   
 
     
     return (
