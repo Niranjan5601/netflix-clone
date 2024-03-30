@@ -2,7 +2,7 @@
 
 import { AiOutlinePlus } from "react-icons/ai";
 import { FaPlay } from "react-icons/fa";
-import MuiModal from '@mui/material/Modal'
+
 import { RxCross1 } from "react-icons/rx";
 import ReactPlayer from "react-player";
 import { BsHandThumbsUp } from "react-icons/bs";
@@ -13,6 +13,7 @@ import { RootState } from "@/utils/appStore";
 
 import { toggleModal, setMovieId } from "@/utils/configSlice"
 import { API_OPTIONS } from "@/utils/constants";
+import Modal from "@mui/material/Modal";
 
 
 
@@ -68,9 +69,9 @@ const MovieCardOnClickDetail = () => {
 
 
     return (
-        <MuiModal
+        <Modal
             open={showModal}
-
+            onClose={handleCloseModal}
             className="fixex !top-7 left-0 right-0 z-50 mx-auto w-full max-w-5xl overflow-hidden overflow-y-scroll rounded-md scrollbar-hide"
         >
             <>
@@ -154,7 +155,7 @@ const MovieCardOnClickDetail = () => {
                     </div>
                 </div>
             </>
-        </MuiModal>
+        </Modal>
     )
 }
 
