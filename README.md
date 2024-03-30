@@ -37,7 +37,8 @@ The below estimation also includes styling the component.
 | Making Home page trailer player                   |       45 mins              |
 | Making Movie Card and displaying them             |        1 hr's              | 
 | Making Movie Detail component                     |        2 hr's              |
-
+| Responsiveness                                    |        3 hr's              |
+| Documentation                                     |        2 hr's              |
 
 ## Description of original code versus code sourced from external resources
 
