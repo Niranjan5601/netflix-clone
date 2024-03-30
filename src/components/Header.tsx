@@ -1,10 +1,11 @@
 'use client';
-import { LOGO } from "@/utils/constants";
+import { LOGO, USER_AVATAR } from "@/utils/constants";
 import { useEffect, useState } from "react";
 import HeaderMenu from "./HeaderMenu";
 import { BiBell, BiSearch } from 'react-icons/bi'
 import Link from 'next/link'
 import Image from "next/image";
+
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false)
 
@@ -29,7 +30,7 @@ const Header = () => {
         <header className={`${isScrolled && 'bg-[#141414]'} flex justify-between`}>
             <div className="flex items-center space-x-2 md:space-x-10">
                 <Image
-                    src="https://rb.gy/ulxxee"
+                    src={LOGO}
                     width={100}
                     height={100}
                     className="cursor-pointer object-contain"
@@ -51,9 +52,11 @@ const Header = () => {
                 <BiBell className="h-6 w-6" />
                 <Link href="/account">
                     <Image
-                        src="https://rb.gy/g1pwyx"
+                        src={USER_AVATAR}
                         alt="image"
                         className="cursor-pointer rounded"
+                        width="30"
+                        height="30"
                     />
                 </Link>
             </div>
