@@ -158,5 +158,4 @@ const MovieCardOnClickDetail = () => {
         </Modal>
     )
 }
-
 export default MovieCardOnClickDetail;

@@ -7,6 +7,7 @@ import Link from 'next/link'
 import Image from "next/image";
 
 const Header = () => {
+    
     const [isScrolled, setIsScrolled] = useState(false)
 
     useEffect(() => {
