@@ -2,7 +2,7 @@
 
 Link to live website: https://netflix-clone-plum-nine.vercel.app/
 
-**Note**: The website wont be able to show data when using Jio network [TMDB site is unreachable on Jio network], kindly configure your DNS to 8.8.8.8 or please use a different network to view the site.
+**Note**: The website wont be able to show data when using Jio network [TMDB site is unreachable on Jio network], kindly configure your DNS to 8.8.8.8 or please use a different network to view the site. Please use desktop to view the website , if you view on phone you may land on "Dangerous Site" warning page for which you can click on "Details" and then click on "this unsafe site".
 
 ## Demo
 [Project Demo](https://github.com/Niranjan5601/netflix-clone/assets/76723996/1cf90119-afe8-4922-b5be-6f7613c971ba)
