@@ -23,17 +23,17 @@ const MovieCard: React.FC<MovieCardProps> = ({ posterPath, movieId }) => {
    
    
 
-    
+    //md:h-[200px] md:min-w-[300px]
     return (
-        <div className='relative h-[120px] min-w-[150px] cursor-pointer transition duration-200 ease-out hover:scale-105 md:h-[200px] md:min-w-[300px] lg:h-[230px] lg:min-w-[350px]  md:hover:scale-101 ' onClick={handleToggleModal}>
+        <div className='relative h-[87px] min-w-[152px] cursor-pointer transition duration-200 ease-out md:min-w-[208px] md:h-[117px]   lg:h-[163px] lg:min-w-[290px]  hover:scale-105 overflow-hidden ' onClick={handleToggleModal}>
           <Image
                 src={IMG_CDN_URL + posterPath}
-                className="rounded-sm md:rounded-sm"
+                className="rounded-sm object-cover md:rounded-sm"
                 fill
                 alt="Movie Card"
-                
-                
-                
+                quality={100}
+                sizes="(max-width: 768px) 50vw,(max-width: 1280px) 100vw, 100vw"
+          
                 
             />
         

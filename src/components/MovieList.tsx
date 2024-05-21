@@ -4,6 +4,7 @@ import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 
 interface Movie {
     id: number;
+    backdrop_path: string;
     poster_path: string;
 }
 
@@ -28,8 +29,8 @@ const MovieList: React.FC<MovieListProps> = ({ title, movies }) => {
         }
     }
     return (
-        <div className="px-6 ">
-            <h1 className="text-lg md:text-3xl py-4 text-white">{title}</h1>
+        <div className="px-2 ">
+            <h1 className="text-base md:text-3xl py-4 text-white">{title}</h1>
             <div className="group relative md:-ml-2">
                 <AiOutlineLeft
                     className={`absolute top-0 bottom-0 left-2 z-40 m-auto h-9 w-9 cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100 ${!isMoved && 'hidden'
@@ -43,7 +44,7 @@ const MovieList: React.FC<MovieListProps> = ({ title, movies }) => {
                    
                 >
                     {movies?.map((movie) => (
-                       <MovieCard key={movie.id} posterPath={movie.poster_path} movieId={movie.id} />
+                       <MovieCard key={movie.id} posterPath={movie?.backdrop_path || movie.poster_path} movieId={movie.id} />
                     ))}
                 </div>
 
