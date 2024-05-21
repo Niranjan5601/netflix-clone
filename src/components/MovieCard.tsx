@@ -25,12 +25,16 @@ const MovieCard: React.FC<MovieCardProps> = ({ posterPath, movieId }) => {
 
     
     return (
-        <div className='relative h-28 min-w-[180px] cursor-pointer transition duration-200 ease-out md:h-36 md:min-w-[350px] md:hover:scale-105' onClick={handleToggleModal}>
+        <div className='relative h-[120px] min-w-[150px] cursor-pointer transition duration-200 ease-out hover:scale-105 md:h-[200px] md:min-w-[300px] lg:h-[230px] lg:min-w-[350px]  md:hover:scale-101 ' onClick={handleToggleModal}>
           <Image
                 src={IMG_CDN_URL + posterPath}
-                className="rounded-sm object-fill md:rounded"
-                layout='fill'
+                className="rounded-sm md:rounded-sm"
+                fill
                 alt="Movie Card"
+                
+                
+                
+                
             />
         
         </div>

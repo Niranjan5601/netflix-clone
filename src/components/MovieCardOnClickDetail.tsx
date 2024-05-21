@@ -143,7 +143,7 @@ const MovieCardOnClickDetail = () => {
 
                                 <div>
                                     <span className="text-[gray]">Original language: </span>
-                                    {movieData?.original_language}
+                                    {movieData?.original_language.toUpperCase()}
                                 </div>
 
                                 <div>

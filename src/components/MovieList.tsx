@@ -39,7 +39,7 @@ const MovieList: React.FC<MovieListProps> = ({ title, movies }) => {
 
                 <div
                     ref={rowRef}
-                    className="flex items-center space-x-0.5 overflow-x-scroll no-scrollbar md:space-x-2.5 md:p-2"
+                    className="flex items-center space-x-2.5 overflow-x-scroll no-scrollbar md:space-x-2.5 md:p-2"
                    
                 >
                     {movies?.map((movie) => (

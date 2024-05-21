@@ -10,18 +10,18 @@ interface VideoTitleProps {
   const VideoTitle: React.FC<VideoTitleProps> = ({ title, overview }) => {
     return (
       <div className=" w-screen aspect-video pt-[20%] px-6 md:px-24 absolute text-white bg-gradient-to-r from-black">
-        <h1 className="text-2xl md:text-6xl font-bold">{title}</h1>
-        <p className="hidden md:inline-block py-6 text-lg w-1/4">{overview}</p>
+        <h1 className="text-xl pb-2 md:text-2xl lg:text-6xl font-bold">{title}</h1>
+        <p className="hidden md:hidden lg:inline-block py-6 text-lg lg:w-[25%]">{overview}</p>
         <div className="flex space-x-3">
         
         <button className="bannerButton bg-white text-black" >
-          <FaPlay className="h-4 w-4 text-black md:h-7 md:w-7"/> Play
+          <FaPlay className="h-3 w-3 text-black md:h-3 md:w-3 lg:h-7 lg:w-7"/> Play
         </button>
         <button
           className="bannerButton bg-[gray]/70"
         
         >
-          <HiOutlineInformationCircle className="h-5 w-5 md:h-8 md:w-8" />More Info 
+          <HiOutlineInformationCircle className="h-3 w-3 md:h-6 md:w-6 lg:h-8 lg:w-8" />More Info 
         </button>
         </div>
       </div>

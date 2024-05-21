@@ -24,7 +24,7 @@ const usePopularMovies = () => {
     !popular && getPopularMovies();
   }, []);
 
-  return popular; // Optionally return the `popular` state if needed in the component
+  return popular; 
 };
 
 export default usePopularMovies;

@@ -27,7 +27,7 @@ const useUpcomingMovies = () => {
     !upcomingMovies && getUpcomingMovies();
   }, []);
 
-  return upcomingMovies; // Optionally return the `popular` state if needed in the component
+  return upcomingMovies; 
 };
 
 export default useUpcomingMovies;

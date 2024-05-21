@@ -38,7 +38,7 @@ const Header = () => {
                     alt="netflix-img"
                 />
                 <HeaderMenu />
-                <ul className="hidden space-x-4 md:flex">
+                <ul className="hidden md:text-xs md:space-x-2 lg:space-x-4 md:flex lg:flex">
                     <li className="headerLink">Home</li>
                     <li className="headerLink">TV Shows</li>
                     <li className="headerLink">Movies</li>
