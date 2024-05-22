@@ -31,7 +31,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ posterPath, movieId }) => {
             API_OPTIONS
           );
           const jsonData = await data.json();
-          console.log(jsonData.backdrops[0]?.file_path);
+          
           setBackDropPath(jsonData.backdrops[0]?.file_path);
 
     }
